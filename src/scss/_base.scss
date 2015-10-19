@@ -1,0 +1,35 @@
+html, body {
+  font-family: $times;
+  background: #fafafa;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 75px;
+
+  a {
+    color: #ffffff;
+    transition: text-shadow 400ms;
+
+    &:hover,
+    &:focus {
+      text-shadow: 5px 3px #dddddd;
+    }
+  }
+}
+
+article {
+  margin-bottom: 50px;
+  font-size: 125px;
+  color: #ffffff;
+  text-shadow: 5px 3px #eeeeee;
+
+  span {
+    margin-left: -60px;
+    margin-right: 10px;
+    font-size: 24px;
+    color: #dddddd;
+    text-shadow: none;
+  }
+}

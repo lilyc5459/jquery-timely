@@ -1,0 +1,90 @@
+$total-height: 35px;
+$line-color: #000000;
+
+.timely {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  height: $total-height;
+  margin-left: -500px;
+  font-size: 12px;
+  z-index: 2;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ul {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      float: left;
+      display: inline-block;
+      height: 100%;
+      margin: 0;
+    }
+  }
+}
+
+ul.timely__groups {
+  height: $total-height;
+
+  li {
+    position: relative;
+
+    &:first-child {
+      .timely__markers {
+        border-left: 1px solid $line-color;
+      }
+    }
+  }
+
+  span {
+    position: absolute;
+    bottom: 0;
+    margin-left: -13px;
+  }
+
+  span + span {
+    right: 0;
+    margin-left: 0;
+    margin-right: -13px;
+  }
+}
+
+.timely__markers {
+  position: absolute;
+  top: 7px;
+  width: 100%;
+  height: 10px;
+  border-right: 1px solid $line-color;
+
+  li {
+    height: 100%;
+    border-right: 1px solid $line-color;
+  }
+}
+
+.timely__markers--major {
+  @extend .timely__markers;
+  height: 10px;
+}
+
+.timely__markers--minor {
+  @extend .timely__markers;
+  height: 7px;
+}
+
+.timely__event {
+  position: absolute;
+  top: -7px;
+  width: 1px;
+  height: 13px;
+  margin-left: -1px;
+  background: $line-color;
+}

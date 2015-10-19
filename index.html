@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+  <title>jQuery Timely</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="dist/css/main.css">
+  <link rel="stylesheet" href="dist/css/timely.css">
+</head>
+<body>
+  <div class="container">
+    <article data-year="1609"><span>1609</span>Hans Lippershey invented the telescope.</article>
+    <article data-year="1610"><span>1610</span>Italian astronomer <a href="http://www.space.com/7230-400-years-galileo-celebrating-international-year-astronomy.html" target="_blank">Galileo Galilei</a> made the first telescopic observation of the moon.</article>
+    <article data-year="1645"><span>1645</span>Michael Florent van Langren made the first map of the moon.</article>
+    <article data-year="1647"><span>1647</span>Johannes Hevelius published the first treatise devoted to the moon.</article>
+    <article data-year="1651"><span>1651</span>Giovanni Battista Riccioli named craters after philosophers and astronomers.</article>
+    <article data-year="1753"><span>1753</span>Roger Joseph Boscovich proved the <a href="http://www.space.com/55-earths-moon-formation-composition-and-orbit.html" target="_blank">moon has no atmosphere</a>.</article>
+    <article data-year="1824"><span>1824</span>Franz von Gruithuisen thought craters were formed by meteor strikes.</article>
+    <article data-year="1920"><span>1920</span>Robert Goddard suggested sending rockets to the moon.</article>
+    <article data-year="1959"><span>1959</span>Soviet spacecraft Luna 2 reached the moon, impacting near the crater Autolycus.</article>
+    <article data-year="1961"><span>1961</span>President <a href="http://www.space.com/11774-jfk-speech-moon-exploration-kennedy-congress-50years.html" target="_blank">John F. Kennedy</a> proposed a manned lunar program.</article>
+    <article data-year="1964"><span>1964</span>NASA's Ranger 7 produced the first close-up TV pictures of the lunar surface.</article>
+    <article data-year="1966"><span>1966</span>Soviet spacecraft Luna 9 made the first soft landing on the moon.</article>
+    <article data-year="1967"><span>1967</span>NASA's Lunar Orbiter missions completed photographic mapping of the moon.</article>
+    <article data-year="1968"><span>1968</span>NASA's <a href="http://www.space.com/6258-leaving-home-legacy-apollo-8.html" target="_blank">Apollo 8</a> made the first manned flight to the moon, circling it 10 times before returning to Earth.</article>
+    <article data-year="1969"><span>1969</span><a href="http://www.space.com/12367-apollo-11-moon-landing-final-shuttle-astronauts.html" target="_blank">Apollo 11</a> mission made the first landing on the moon and returned samples.</article>
+    <article data-year="1972"><span>1972</span>Apollo 17 made the last manned landing of the Apollo Program.</article>
+    <article data-year="1976"><span>1976</span>Soviet Luna 24 returned the last sample to be returned from the moon (to date).</article>
+    <article data-year="1990"><span>1990</span>NASA's Galileo spacecraft obtained multispectral images of the western limb and part of the far side of the moon.</article>
+    <article data-year="1994"><span>1994</span>NASA's Clementine mission conducted multispectral mapping of the moon.</article>
+    <article data-year="1998"><span>1998</span>NASA's Lunar Prospector mission launched.</article>
+    <article data-year="2007"><span>2007</span><a href="http://www.space.com/11971-china-moon-probe-begins-deep-space-exploration.html" target="_blank">Chinese Chang'e 1</a> lunar orbiter launched.</article>
+    <article data-year="2008"><span>2008</span>Indian <a href="http://www.space.com/6082-indian-moon-probe-lunar-orbit.html" target="_blank">Chandrayaan 1</a> moon orbiter launched.</article>
+    <article data-year="2009"><span>2009</span>NASA's Lunar Reconnaissance Orbiter launched</article>
+  </div>
+  <script src="dist/js/lib.min.js"></script>
+  <script src="dist/js/jquery.timely.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.container').timely();
+    });
+  </script>
+</body>
+</html>
