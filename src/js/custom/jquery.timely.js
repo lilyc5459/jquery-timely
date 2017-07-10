@@ -154,7 +154,7 @@
         } else if (minorType === 'm') {
 
         } else if (minorType === 'y') {
-          var l = ((elem.year - start)/range) * wrapperWidth;
+          var l = ((elem.year - start)/range) * (wrapperWidth - 1);
 
           $('<div>', {
             'class': 'timely__event',

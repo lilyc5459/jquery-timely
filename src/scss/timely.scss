@@ -76,15 +76,14 @@ ul.timely__groups {
 
 .timely__markers--minor {
   @extend .timely__markers;
-  height: 7px;
+  height: 5px;
 }
 
 .timely__event {
   position: absolute;
-  top: -7px;
+  top: 0px;
   width: 1px;
-  height: 14px;
-  margin-left: -1px;
+  height: 12px;
   background: $event-color;
   z-index: 2;
 }
