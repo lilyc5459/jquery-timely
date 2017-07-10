@@ -1,5 +1,5 @@
 /**
- * @name jQuery Timely
+ * @name Timely.js
  * @author Lillian
  * @version 0.1.0
  */
@@ -43,10 +43,11 @@
       var wrapperWidth = _self.$wrapper.width();
       _self.$wrapper.prepend('<div class="timely"></div>');
       $(_self.config.container).css('width', wrapperWidth)
-                  .prepend('<ul class="timely__groups"></ul>');
+                               .prepend('<ul class="timely__groups"></ul>');
 
       var events = [];
 
+      // collect all events
       $('[data-year]').each(function() {
         var item = {
           year: $(this).data('year'),
@@ -57,8 +58,10 @@
         events.push(item);
       });
 
+      // sort by asc/desc
       events.sort(_self.sortEvents(_self.config.order));
 
+      // begin timeline build
       var start, end;
 
       if (_self.config.order) {
@@ -83,7 +86,7 @@
         interval = 100;
       }
 
-      var groups = Math.ceil(range / interval) + 1,
+      var groups = Math.ceil(range / interval),
           groupWidth = wrapperWidth / groups,
           y = _self.config.order ? start : end;
       
@@ -151,16 +154,13 @@
         } else if (minorType === 'm') {
 
         } else if (minorType === 'y') {
-          var i1 = Math.floor((elem.year - start) / interval) + 1;
-          var i2 = Math.ceil((elem.year - start) % minorGroups) + 1;
-
-          $().find('')
+          var l = ((elem.year - start)/range) * wrapperWidth;
 
           $('<div>', {
             'class': 'timely__event',
             'data-year': elem.year
-          }).appendTo(_self.config.groups + ' > li:nth-child('+ i1 +') ' + _self.config.marker_minor + ' > li:nth-child('+ i2 +')');
-          console.log(_self.config.groups + ' > li:nth-child('+ i1 +') ' + _self.config.marker_minor + ' > li:nth-child('+ i2 +')');
+          }).css('left', l)
+            .appendTo(_self.config.container);
         } else {
 
         }

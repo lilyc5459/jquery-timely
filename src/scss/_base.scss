@@ -9,12 +9,12 @@ html, body {
   padding-top: 75px;
 
   a {
-    color: #ffffff;
+    color: #aaa;
     transition: text-shadow 400ms;
 
     &:hover,
     &:focus {
-      text-shadow: 5px 3px #dddddd;
+      text-shadow: 7px 5px #fff;
     }
   }
 }
@@ -22,14 +22,14 @@ html, body {
 article {
   margin-bottom: 50px;
   font-size: 125px;
-  color: #ffffff;
-  text-shadow: 5px 3px #eeeeee;
+  color: #aaa;
+  text-shadow: 5px 3px #fff;
 
   span {
     margin-left: -60px;
     margin-right: 10px;
     font-size: 24px;
-    color: #dddddd;
+    color: #aaa;
     text-shadow: none;
   }
 }
