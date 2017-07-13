@@ -15,13 +15,13 @@
 
   Timely.prototype = {
     defaults: {
-      container:    '.timely',
-      groups:       '.timely__groups',
-      marker_major: '.timely__markers--major',
-      marker_minor: '.timely__markers--minor',
-      marker_event: '.timely__event',
-      order:        true, // true if asc, false if desc
-      interval:     1
+      container:     'timely',
+      groups:        'timely__groups',
+      markers_major: 'timely__markers--major',
+      markers_minor: 'timely__markers--minor',
+      markers_event: 'timely__markers--event',
+      order:         true, // true if asc, false if desc
+      interval:      1
     },
 
     init: function() {
@@ -42,8 +42,8 @@
 
       var wrapperWidth = _self.$wrapper.width();
       _self.$wrapper.prepend('<div class="timely"></div>');
-      $(_self.config.container).css('width', wrapperWidth)
-                               .prepend('<ul class="timely__groups"></ul>');
+      $('.' + _self.config.container).css('width', wrapperWidth)
+                               .prepend('<ul class="' + _self.config.groups + '"></ul>');
 
       var events = [];
 
@@ -100,24 +100,26 @@
           'style': 'width:'+ groupWidth + 'px'
         }).append(
           $('<ul>', {
-            'class': 'timely__markers--minor'
+            'class': _self.config.markers_minor
           })
         ).append(
           $('<div>', {
-            'class': 'timely__markers--major'
+            'class': _self.config.markers_major
           })
         ).append(
           $('<span>', {
             'text': y
           })
-        ).appendTo(_self.config.groups);
+        ).appendTo('.' + _self.config.groups);
       }
 
+      // place text for last major year
       var lastYear = _self.config.order ? y + interval : y - interval;
       $('<span>', {
         'text': lastYear
-      }).appendTo(_self.config.groups + '> li:last-child');
+      }).appendTo('.' + _self.config.groups + '> li:last-child');
 
+      // place minor ticks
       var minorGroups = 0,
           minorType = 'm'; // m for months, y for years, d for days
 
@@ -136,17 +138,18 @@
           $('<li>', {
             'data-marker-month': j,
             'style': 'width:'+groupWidth/(minorGroups + 1)
-          }).appendTo(_self.config.marker_minor);
+          }).appendTo('.' + _self.config.markers_minor);
         } else if (minorType === 'y') {
           $('<li>', {
             // 'data-marker-year': 
             'style': 'width:'+groupWidth/(minorGroups + 1)+'px'
-          }).appendTo(_self.config.marker_minor);
+          }).appendTo('.' + _self.config.markers_minor);
         } else {
 
         }
       }
 
+      // place event markers
       $.each(events, function(i, elem) {
         // year cannot be undefined
         if (minorType === 'd') {
@@ -154,13 +157,13 @@
         } else if (minorType === 'm') {
 
         } else if (minorType === 'y') {
-          var l = ((elem.year - start)/range) * (wrapperWidth - 1);
+          var l = ((elem.year - start)/(lastYear - start)) * (wrapperWidth - 1);
 
           $('<div>', {
-            'class': 'timely__event',
+            'class': _self.config.markers_event,
             'data-year': elem.year
           }).css('left', l)
-            .appendTo(_self.config.container);
+            .appendTo('.' + _self.config.container);
         } else {
 
         }

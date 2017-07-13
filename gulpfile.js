@@ -15,10 +15,9 @@ var gulp            = require('gulp'),
 
 
 gulp.task('styles', function(){
-    return gulp.src( 'src/scss/*.scss' )
-        .pipe(plumber())
-        .pipe(sass({'sourcemap=none': true}))
-        .pipe(minifycss())
+    return sass(['src/scss/*.scss'], {
+            style: 'compressed'
+        })
         .pipe(gulp.dest('dist/css/'))
 });
 

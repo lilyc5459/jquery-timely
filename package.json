@@ -4,18 +4,18 @@
   "author": "Lillian Chen",
   "devDependencies": {
     "gulp": "^3.8.6",
-    "gulp-ruby-sass": "^0.6.0",
     "gulp-autoprefixer": "0.0.8",
-    "gulp-minify-css": "^0.3.6",
-    "gulp-jshint": "^1.7.1",
-    "gulp-uglify": "^0.3.1",
-    "gulp-concat": "^2.3.3",
-    "gulp-clean": "^0.3.1",
-    "gulp-rename": "^1.2.0",
     "gulp-cache": "^0.2.0",
-    "gulp-livereload": "^2.1.0",
-    "gulp-plumber": "^0.6.4",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.3.3",
     "gulp-csslint": "^0.1.4",
+    "gulp-jshint": "^1.7.1",
+    "gulp-livereload": "^2.1.0",
+    "gulp-minify-css": "^0.3.6",
+    "gulp-plumber": "^0.6.4",
+    "gulp-rename": "^1.2.0",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-uglify": "^0.3.1",
     "jshint-stylish": "^0.4.0"
   }
 }
